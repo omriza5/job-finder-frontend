@@ -13,9 +13,11 @@ const Register = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    /* check the response status*/
+
+    /** redirect to home page */
     console.log(data);
   };
-
 
   return (
     <>
