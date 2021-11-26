@@ -1,3 +1,9 @@
 /*#101F33 ==> dark blue
   #081627 ==> black
 */
+
+.Toastify__toast-body {
+  font-size: 1.5rem;
+  font-weight: bold;
+  height: 10rem;
+}
