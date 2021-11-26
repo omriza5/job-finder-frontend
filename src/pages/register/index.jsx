@@ -15,7 +15,7 @@ const Register = () => {
   const onSubmit = (data) => {
     /* check the response status*/
 
-    /** redirect to home page */
+    /** redirect to home page "/" */
     console.log(data);
   };
 
