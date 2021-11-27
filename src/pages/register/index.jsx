@@ -1,22 +1,32 @@
 import React from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import { Link, useNavigate } from "react-router-dom";
+import http from "../../services/httpService";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { useForm } from "react-hook-form";
 import "./style.css";
 
+const usersEndpoint = process.env.REACT_APP_DEV_USERS_ENDPOINT;
 const Register = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => {
-    /* check the response status*/
 
-    /** redirect to home page "/" */
-    console.log(data);
+  const navigate = useNavigate();
+  const onSubmit = async (data) => {
+    try {
+      const { data: token } = await http.post(usersEndpoint, data);
+      toast.success(`Hello ${data.firstName} ${data.lastName}`);
+      localStorage.setItem("token", token);
+      navigate("/", { replace: true });
+    } catch (error) {
+      toast.error(error.response.data);
+    }
   };
 
   return (
@@ -204,7 +214,7 @@ const Register = () => {
               </div>
             </div>
           </div>
-          <div className="form-button">
+          <div className="form-button-section">
             <Button
               variant="contained"
               type="submit"
@@ -212,6 +222,10 @@ const Register = () => {
             >
               Submit
             </Button>
+
+            <p>
+              Already registered? <Link to="/signin">Signin</Link>
+            </p>
           </div>
         </div>
       </form>
