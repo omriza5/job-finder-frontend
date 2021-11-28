@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Register from "./pages/register";
+import Login from "./pages/login";
 import http from "./services/httpService";
 import { ToastContainer } from "react-toastify";
 
@@ -11,8 +12,8 @@ const App = () => {
   return (
     <>
       <Routes>
-        <Route path="/signup" element={<Register />} />
-        <Route path="/signin" element={null} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/profile" element={null} />
         <Route path="/" element={null} />
       </Routes>

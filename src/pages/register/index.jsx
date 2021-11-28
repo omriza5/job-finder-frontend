@@ -33,7 +33,7 @@ const Register = () => {
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <div className="form-container">
-          <h1>Signup</h1>
+          <h1>Register</h1>
           <div className="form-content">
             <div className="personal-details">
               <h3 className="form-info-heading">Personal Details</h3>
@@ -125,6 +125,7 @@ const Register = () => {
                     id="linkedinUsername"
                     label="Linkedin username"
                     variant="standard"
+                    handleSubmit
                     inputProps={{ style: { fontSize: 18 } }}
                     InputLabelProps={{ style: { fontSize: 18 } }}
                     {...register("linkedinUsername", {
@@ -220,11 +221,11 @@ const Register = () => {
               type="submit"
               style={{ width: 250, height: 50, fontSize: 30 }}
             >
-              Submit
+              Register
             </Button>
 
             <p>
-              Already registered? <Link to="/signin">Signin</Link>
+              Already registered? <Link to="/login">Login</Link>
             </p>
           </div>
         </div>
