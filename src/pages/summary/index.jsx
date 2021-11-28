@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../../components/header";
 
-const Profile = () => {
+const Summary = () => {
   return (
     <>
-      <Header title="Profile" />
+      <Header title="Summary" />
     </>
   );
 };
 
-export default Profile;
+export default Summary;

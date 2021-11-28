@@ -9,9 +9,10 @@ import "./style.css";
 const sideNavItems = [
   {
     id: 1,
-    label: "Home",
+    label: "Summary",
     icon: <HomeIcon style={{ fill: "#fff", fontSize: "3rem" }} />,
-    path: "/",
+    path: "/summary",
+    default: true,
   },
   {
     id: 2,
@@ -33,11 +34,6 @@ const sideNavItems = [
   },
 ];
 const SideNav = () => {
-  const renderClass = (navData) => {
-    let classes = "side-nav-item";
-    classes += navData.isActive ? " active-nav-item" : "";
-    return classes;
-  };
   return (
     <>
       <div className="side-nav">
@@ -52,6 +48,7 @@ const SideNav = () => {
               <NavLink
                 className={({ isActive }) => (isActive ? "active" : "inactive")}
                 to={item.path}
+                end={item.default ? true : false}
               >
                 {item.label}
               </NavLink>

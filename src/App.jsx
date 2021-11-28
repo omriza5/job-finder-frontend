@@ -10,6 +10,7 @@ import "./App.css";
 import Facebook from "./pages/facebook";
 import Linkedin from "./pages/linkedin";
 import Profile from "./pages/profile/index";
+import Summary from "./pages/summary/index";
 
 const App = () => {
   useEffect(() => {}, []);
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
 
         <Route path="/" element={<Home />}>
+          <Route path="/summary" element={<Summary />} />
           <Route path="/facebook" element={<Facebook />} />
           <Route path="/linkedin" element={<Linkedin />} />
           <Route path="/profile" element={<Profile />} />

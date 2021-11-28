@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  height: 20vh;
+  width: 85vw;
+  background-color: #009be5;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+}
+.header-content h1 {
+  font-size: 5rem;
+  color: #fff;
+}
+
+.header-user-info {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 50%;
+  padding: 1rem;
+}
+
+.header-user-info h3 {
+  margin-right: 2rem;
+  font-size: 2rem;
+  color: #fff;
+}
+.header-user-info h3:hover {
+  color: #eaeff1;
+}

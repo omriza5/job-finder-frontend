@@ -4,7 +4,7 @@
   align-items: center;
   background-color: #081627;
   height: 100vh;
-  width: 30rem;
+  width: 15vw;
   border-right: 1px solid rgba(0, 0, 0, 0.12);
 }
 
@@ -51,8 +51,4 @@
 .side-nav-icon {
   flex: 20%;
   text-align: center;
-}
-
-.active {
-  color: black;
 }

@@ -1,7 +1,12 @@
 import React from "react";
+import Header from "../../components/header";
 
 const Facebook = () => {
-  return <h1 style={{ fontSize: "15rem", color: "green" }}>Facebook</h1>;
+  return (
+    <>
+      <Header title="Facebook" />
+    </>
+  );
 };
 
 export default Facebook;

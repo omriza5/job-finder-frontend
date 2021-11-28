@@ -21,7 +21,7 @@ const Login = () => {
       const { data: token } = await http.post(authEndpoint, data);
       localStorage.setItem("token", token);
       toast.success(`Welcome back`);
-      navigate("/", { replace: true });
+      navigate("/summary", { replace: true });
     } catch (error) {
       toast.error(error.response.data);
     }

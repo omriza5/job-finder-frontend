@@ -1,7 +1,11 @@
 import React from "react";
-
+import Header from "../../components/header";
 const Linkedin = () => {
-  return <h1 style={{ fontSize: "15rem", color: "green" }}>Linkedin</h1>;
+  return (
+    <>
+      <Header title="Linkedin" />
+    </>
+  );
 };
 
 export default Linkedin;

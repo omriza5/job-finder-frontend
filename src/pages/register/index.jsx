@@ -23,7 +23,7 @@ const Register = () => {
       const { data: token } = await http.post(usersEndpoint, data);
       toast.success(`Hello ${data.firstName} ${data.lastName}`);
       localStorage.setItem("token", token);
-      navigate("/", { replace: true });
+      navigate("/summary", { replace: true });
     } catch (error) {
       toast.error(error.response.data);
     }
