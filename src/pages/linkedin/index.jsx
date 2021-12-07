@@ -3,8 +3,10 @@ import Header from "../../components/header";
 import LinkedinFilters from "../../components/linkedinFilters";
 import Table from "../../components/table";
 import http from "../../services/httpService";
-import { linkedinColumns } from "../../services/tableColumns";
+import { getLinkedinColumns } from "../../services/tableColumns";
+import { deleteJob } from "../../services/jobService";
 import "./style.css";
+import { toast } from "react-toastify";
 
 const linkedinCrawlEndpoint = process.env.REACT_APP_DEV_LINKEDIN_ENDPOINT;
 
@@ -21,15 +23,16 @@ const Linkedin = () => {
   useEffect(() => {
     const getJobs = async () => {
       try {
-        const { data } = await http.get(
+        const { data: jobs } = await http.get(
           "http://localhost:5000/api/jobs/61ac8abcce6a98411e4b291a"
         );
-        setJobs(data.jobs);
+        setJobs(jobs);
       } catch (error) {}
     };
 
     getJobs();
   }, []);
+  console.log(jobs.length);
   const handleSelect = (select, action) => {
     const prop = action.name;
     setFilters({ ...filters, [prop]: select.label });
@@ -55,6 +58,23 @@ const Linkedin = () => {
     } catch (error) {}
   };
 
+  const handleDelete = async (jobId) => {
+    const originalJobs = [...jobs];
+    try {
+      const filteredJobs = jobs.filter((job) => job._id !== jobId);
+      setJobs(filteredJobs);
+      const { status } = await deleteJob(jobId, "61ac8abcce6a98411e4b291a");
+
+      if (status === 200) {
+        toast.success("Job Deleted Successfully");
+      }
+    } catch (error) {
+      toast.error("Deletion Failed!");
+      setJobs(originalJobs);
+    }
+    /** update the view */
+  };
+
   return (
     <>
       <Header title="Linkedin" />
@@ -67,7 +87,9 @@ const Linkedin = () => {
           />
         </div>
         <div className="platform-main-right shadow-card">
-          {jobs.length > 0 && <Table columns={linkedinColumns} data={jobs} />}
+          {jobs.length > 0 && (
+            <Table columns={getLinkedinColumns(handleDelete)} data={jobs} />
+          )}
         </div>
       </div>
     </>

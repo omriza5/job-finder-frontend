@@ -12,7 +12,6 @@ const styles = {
   control: (base) => ({
     ...base,
     fontSize: "2rem",
-    fontWeight: "bold",
   }),
   menu: (base) => ({
     ...base,

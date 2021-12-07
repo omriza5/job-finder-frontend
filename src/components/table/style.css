@@ -1,9 +1,7 @@
 .styled-table {
   border-collapse: collapse;
-  margin: 2.5rem 0;
   font-size: 1.5rem;
-  font-family: sans-serif;
-  min-width: 100%;
+  width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -28,4 +26,10 @@
 
 .styled-table tbody tr:last-of-type {
   border-bottom: 2px solid #009879;
+}
+
+tbody tr td:first-child,
+tbody tr td:nth-child(2),
+tbody tr td:nth-child(3) {
+  width: 25ch;
 }

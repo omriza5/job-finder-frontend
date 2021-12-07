@@ -3,7 +3,6 @@ import { useTable } from "react-table";
 import "./style.css";
 
 const Table = ({ columns, data }) => {
-  console.log(data);
   const memoColumns = useMemo(() => columns, [columns]);
   const memoData = useMemo(() => data, [data]);
 

@@ -20,3 +20,7 @@
   width: 80%;
   overflow-y: scroll;
 }
+
+.platform-main-right::-webkit-scrollbar {
+  display: none;
+}
