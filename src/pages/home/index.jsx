@@ -1,10 +1,14 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, Navigate } from "react-router-dom";
 import "./style.css";
 
 import SideNav from "../../components/sideNav";
 import Header from "../../components/header";
-const Home = () => {
+import { getCurrentUser } from "../../services/userService";
+const Home = ({ user }) => {
+  if (!getCurrentUser()) {
+    return <Navigate to="/login" replace />;
+  }
   return (
     <>
       <div className="home">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 import "./style.css";
 const Header = ({ title, firstName, lastName }) => {
@@ -9,7 +10,9 @@ const Header = ({ title, firstName, lastName }) => {
           <h1>{title}</h1>
         </div>
         <div className="header-user-info">
-          <h3>Hello Omri Zaher</h3>
+          <h3>
+            Hello Omri Zaher,<Link to="/logout">Logout</Link>
+          </h3>
           <div className="avatar">
             <Avatar />
           </div>

@@ -2,9 +2,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import http from "../../services/httpService";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, Navigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import { getCurrentUser } from "../../services/userService";
 
 const authEndpoint = process.env.REACT_APP_DEV_AUTH_ENDPOINT;
 const Login = () => {
@@ -15,7 +16,6 @@ const Login = () => {
   } = useForm();
 
   const navigate = useNavigate();
-
   const onSubmit = async (data) => {
     try {
       const { data: token } = await http.post(authEndpoint, data);
@@ -26,6 +26,10 @@ const Login = () => {
       toast.error(error.response.data);
     }
   };
+
+  if (getCurrentUser()) {
+    return <Navigate to="/summary" replace />;
+  }
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="form">
