@@ -7,7 +7,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { getCurrentUser } from "../../services/userService";
 
-const authEndpoint = process.env.REACT_APP_DEV_AUTH_ENDPOINT;
+const apiBaseUrl = process.env.REACT_APP_DEV_BASE_URL;
 const Login = () => {
   const {
     register,
@@ -17,7 +17,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      const { data: token } = await http.post(authEndpoint, data);
+      const { data: token } = await http.post(`${apiBaseUrl}/auth`, data);
       localStorage.setItem("token", token);
       toast.success(`Welcome back`);
       window.location = "/summary";

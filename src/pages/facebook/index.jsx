@@ -7,7 +7,7 @@ import Select from "react-select";
 import Post from "../../components/post";
 import "./style.css";
 
-const apiBaseUrl = process.env.REACT_APP_PRO_BASE_URL;
+const apiBaseUrl = process.env.REACT_APP_DEV_BASE_URL;
 const styles = {
   control: (base) => ({
     ...base,

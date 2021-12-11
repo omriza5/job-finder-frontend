@@ -12,6 +12,7 @@ import Table from "../../components/table";
 import Select from "react-select";
 import "./style.css";
 
+const apiBaseUrl = process.env.REACT_APP_DEV_BASE_URL;
 const styles = {
   control: (base) => ({
     ...base,
@@ -32,9 +33,7 @@ const Summary = ({ user }) => {
   useEffect(() => {
     if (user) {
       const getAppliedJobs = async () => {
-        const { data: jobs } = await http.get(
-          `http://localhost:5000/api/jobs/${user._id}`
-        );
+        const { data: jobs } = await http.get(`${apiBaseUrl}/jobs/${user._id}`);
         const applied = jobs.filter((job) => job.applied);
         setAppliedJobs(applied);
         setAllJobs(jobs);
@@ -49,7 +48,7 @@ const Summary = ({ user }) => {
 
     try {
       /**call the server to update the status of the job */
-      await http.put("http://localhost:5000/api/jobs/status", {
+      await http.put(`${apiBaseUrl}/jobs/status`, {
         jobId: job.original._id,
         userId: user._id,
         status,

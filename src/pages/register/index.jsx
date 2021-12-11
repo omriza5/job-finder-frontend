@@ -10,7 +10,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import "./style.css";
 
-const usersEndpoint = process.env.REACT_APP_DEV_USERS_ENDPOINT;
+const apiBaseUrl = process.env.REACT_APP_DEV_BASE_URL;
 const Register = () => {
   const {
     register,
@@ -20,7 +20,7 @@ const Register = () => {
 
   const onSubmit = async (data) => {
     try {
-      const { data: token } = await http.post(usersEndpoint, data);
+      const { data: token } = await http.post(`${apiBaseUrl}/users`, data);
       toast.success(`Hello ${data.firstName} ${data.lastName}`);
       localStorage.setItem("token", token);
       window.location = "/summary";

@@ -9,7 +9,7 @@ import Table from "../../components/table";
 import CircularProgress from "@mui/material/CircularProgress";
 import "./style.css";
 
-const apiBaseUrl = process.env.REACT_APP_PRO_BASE_URL;
+const apiBaseUrl = process.env.REACT_APP_DEV_BASE_URL;
 const Linkedin = ({ user }) => {
   const [jobs, setJobs] = useState([]);
   const [filters, setFilters] = useState({
@@ -92,13 +92,10 @@ const Linkedin = ({ user }) => {
   };
   const handleSave = async (jobId) => {
     try {
-      const { data: updatedUser } = await http.put(
-        "http://localhost:5000/api/jobs",
-        {
-          jobId,
-          userId: user._id,
-        }
-      );
+      const { data: updatedUser } = await http.put(`${apiBaseUrl}/jobs"`, {
+        jobId,
+        userId: user._id,
+      });
       const newJobs = updatedUser.jobs.filter(
         (job) => job.isRelevant && !job.applied
       );
