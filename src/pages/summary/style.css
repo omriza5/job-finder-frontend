@@ -1,0 +1,41 @@
+.summary-main {
+  padding: 1rem 2rem;
+}
+
+.summary-main-upper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.appliedTable {
+  height: 30rem;
+  width: 80%;
+  overflow-y: scroll;
+}
+
+.appliedTable::-webkit-scrollbar {
+  display: none;
+}
+
+.summary-main-lower {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  height: 100%;
+}
+
+.summary-main-lower .appliedTable {
+  height: 100%;
+}
+
+.summary-filter {
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  height: 15rem;
+}
+.summary-filter p {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}

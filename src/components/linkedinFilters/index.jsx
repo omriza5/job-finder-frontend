@@ -20,7 +20,12 @@ const styles = {
   }),
 };
 
-const LinkedinFilters = ({ onSelect, onInputChange, onFiltersSubmit }) => {
+const LinkedinFilters = ({
+  onSelect,
+  onInputChange,
+  onFiltersSubmit,
+  numOfJobs,
+}) => {
   return (
     <>
       <div className="filters">
@@ -81,6 +86,10 @@ const LinkedinFilters = ({ onSelect, onInputChange, onFiltersSubmit }) => {
         >
           Find Jobs
         </Button>
+      </div>
+      <div className="jobs-count">
+        <span>Total Jobs</span>
+        <span>{numOfJobs}</span>
       </div>
     </>
   );

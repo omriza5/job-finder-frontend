@@ -24,3 +24,16 @@
 .platform-main-right::-webkit-scrollbar {
   display: none;
 }
+
+.circular-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+.message {
+  text-align: center;
+  margin-top: 5rem;
+  font-size: 3rem;
+}

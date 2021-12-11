@@ -1,0 +1,27 @@
+.jobs-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 25rem;
+}
+
+.jobs-summary p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.summary-par {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.summary-par:last-child {
+  margin-bottom: 0rem;
+}
+
+.summary-par span {
+  font-size: 2rem;
+}

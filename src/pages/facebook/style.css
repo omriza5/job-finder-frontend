@@ -1,0 +1,36 @@
+.facebook-main {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 2rem;
+  height: 85vh;
+  width: 85vw;
+}
+
+.fb-upper-section {
+  display: flex;
+  align-items: center;
+  height: 10%;
+  margin-bottom: 1rem;
+}
+
+.fb-lower-section {
+  height: 90%;
+  width: 70%;
+  align-self: center;
+  overflow-y: scroll;
+}
+
+.fb-lower-section::-webkit-scrollbar {
+  display: none;
+}
+
+.fb-search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+}
+
+.fb-groups-input {
+  width: 50%;
+}

@@ -11,7 +11,7 @@ const Header = ({ title, firstName, lastName }) => {
         </div>
         <div className="header-user-info">
           <h3>
-            Hello Omri Zaher,<Link to="/logout">Logout</Link>
+            Hello {firstName} {lastName},<Link to="/logout">Logout</Link>
           </h3>
           <div className="avatar">
             <Avatar />

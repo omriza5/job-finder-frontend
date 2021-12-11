@@ -1,0 +1,12 @@
+.profile-main {
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-main img {
+  height: 50rem;
+  width: 50rem;
+  border-radius: 10px;
+}

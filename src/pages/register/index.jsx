@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
-import { Link, useNavigate, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { getCurrentUser } from "../../services/userService";
 import http from "../../services/httpService";
 import TextField from "@mui/material/TextField";
@@ -18,13 +18,12 @@ const Register = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate();
   const onSubmit = async (data) => {
     try {
       const { data: token } = await http.post(usersEndpoint, data);
       toast.success(`Hello ${data.firstName} ${data.lastName}`);
       localStorage.setItem("token", token);
-      navigate("/summary", { replace: true });
+      window.location = "/summary";
     } catch (error) {
       toast.error(error.response.data);
     }

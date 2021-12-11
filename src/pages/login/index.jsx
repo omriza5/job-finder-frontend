@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import http from "../../services/httpService";
-import { Link, useNavigate, Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { getCurrentUser } from "../../services/userService";
@@ -15,13 +15,12 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const navigate = useNavigate();
   const onSubmit = async (data) => {
     try {
       const { data: token } = await http.post(authEndpoint, data);
       localStorage.setItem("token", token);
       toast.success(`Welcome back`);
-      navigate("/summary", { replace: true });
+      window.location = "/summary";
     } catch (error) {
       toast.error(error.response.data);
     }
