@@ -17,7 +17,7 @@ const App = () => {
   useEffect(() => {
     setUser(getCurrentUser());
   }, []);
-  console.log("app: ", user);
+
   return (
     <>
       <Routes>

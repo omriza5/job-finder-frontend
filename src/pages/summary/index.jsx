@@ -64,6 +64,7 @@ const Summary = ({ user }) => {
 
     setFilteredJobs(filtered);
   };
+
   return (
     <>
       <Header
