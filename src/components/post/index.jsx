@@ -6,10 +6,10 @@ const Post = ({ post, onPostDelete, onPostApply }) => {
       <div className="post shadow-card">
         <div className="descreption">{post.description}</div>
         <div className="post-buttons">
-          <div className="post-button" onClick={() => onPostDelete(post._id)}>
+          <div className="post-button" onClick={() => onPostDelete(post)}>
             Delete
           </div>
-          <div className="post-button" onClick={() => onPostApply(post._id)}>
+          <div className="post-button" onClick={() => onPostApply(post)}>
             Apply
           </div>
         </div>

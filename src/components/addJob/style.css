@@ -1,0 +1,16 @@
+.add-job-form {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  height: 100%;
+}
+
+.add-job-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.add-job-form h1 {
+  font-size: 3.5rem;
+  margin-bottom: 3rem;
+}

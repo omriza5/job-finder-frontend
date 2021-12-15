@@ -92,7 +92,7 @@ const Linkedin = ({ user }) => {
   };
   const handleSave = async (jobId) => {
     try {
-      const { data: updatedUser } = await http.put(`${apiBaseUrl}/jobs"`, {
+      const { data: updatedUser } = await http.put(`${apiBaseUrl}/jobs`, {
         jobId,
         userId: user._id,
       });

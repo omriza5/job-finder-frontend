@@ -23,7 +23,7 @@ const Register = () => {
       const { data: token } = await http.post(`${apiBaseUrl}/users`, data);
       toast.success(`Hello ${data.firstName} ${data.lastName}`);
       localStorage.setItem("token", token);
-      window.location = "/summary";
+      window.location = "/linkedin";
     } catch (error) {
       toast.error(error.response.data);
     }
